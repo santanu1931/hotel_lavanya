@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dish Rates</title>
+  <script>
+    function calculateTotal() {
+      var total = 0;
+      
+      // Get the checkboxes for dishes, desserts, and starters
+      var dishCheckboxes = document.getElementsByName('Dish');
+      var dessertCheckboxes = document.getElementsByName('Dessert');
+      var starterCheckboxes = document.getElementsByName('Starter');
+      
+      // Calculate the total based on the selected checkboxes
+      for (var i = 0; i < dishCheckboxes.length; i++) {
+        if (dishCheckboxes[i].checked) {
+          total += parseFloat(dishCheckboxes[i].value);
+        }
+      }
+      
+      for (var i = 0; i < dessertCheckboxes.length; i++) {
+        if (dessertCheckboxes[i].checked) {
+          total += parseFloat(dessertCheckboxes[i].value);
+        }
+      }
+      
+      for (var i = 0; i < starterCheckboxes.length; i++) {
+        if (starterCheckboxes[i].checked) {
+          total += parseFloat(starterCheckboxes[i].value);
+        }
+      }
+      
+      // Display the total rate
+      document.getElementById('total').textContent = 'Total Rate: $' + total.toFixed(2);
+    }
+  </script>
+</head>
+<body>
+  <h1>Dish Rates</h1>
+  
+  <form >
+    <h2>Dishes</h2>
+    <input type="checkbox" name="dish" value="10.00"> Dish 1 - 10.00<br>
+    <input type="checkbox" name="dish" value="15.00"> Dish 2 - $15.00<br>
+    <input type="checkbox" name="dish" value="12.50"> Dish 3 - $12.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Spaghetti Carbonara -100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Chicken Curry 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Beef Stir-Fry 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Vegetable Biryani 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Grilled Salmon 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Paneer Tikka Masala 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Mushroom Risotto 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Teriyaki Chicken 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">Spinach and Feta Stuffed Chicken 100.50<br>
+    <input type="checkbox" name="Dish" value="100.50">onion Kebab 100.50<br>
+    <h2>Desserts</h2>
+    <input type="checkbox" name="Dessert" value="100.50">Chocolate Cake<br>
+    <input type="checkbox" name="Dessert" value="100.50">Strawberry Ice Cream<br>
+    <input type="checkbox" name="Dessert" value="100.50">Vanilla Pudding<br>
+    <input type="checkbox" name="Dessert" value="100.50">Mango Sorbet<br>
+    <input type="checkbox" name="Dessert" value="100.50">Apple Pie<br>
+    <input type="checkbox" name="Dessert" value="100.50">Cheesecake<br>
+    <input type="checkbox" name="Dessert" value="100.50">Churros<br>
+    <input type="checkbox" name="Dessert" value="100.50 ">Creme Brulee<br>
+    <input type="checkbox" name="Dessert" value="100.50">Lemon Tart<br>
+    <input type="checkbox" name="Dessert" value="100.50">Tiramisu<br>
+    <h2>Starters</h2>
+    <input type="checkbox" name="Starter" value="100.50 ">panner tikka<br>
+    <input type="checkbox" name="Starter" value="100.50">kadai masrum<br>
+    <input type="checkbox" name="Starter" value="100.50">Bhara kabab<br>
+    <input type="checkbox" name="Starter" value="100.50">Boti kabab<br>
+    <input type="checkbox" name="Starter" value="100.50">panner chilly<br>
+    <input type="checkbox" name="Starter" value="100.50">khandvi<br>
+    <input type="checkbox" name="Starter" value="100.50">bikaneer bhujia<br>
+    <input type="checkbox" name="Starter" value="100.50">dahi vada<br>
+    <input type="checkbox" name="Starter" value="100.50">Gobi Manchurian<br>
+    <input type="checkbox" name="Starter" value="100.50">onion kabab<br>
+    
+    <br>
+    <button type="button" onclick="calculateTotal()">Calculate Total</button>
+    <p id="total"></p>
+  </form>
+</body>
+</html>
